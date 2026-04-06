@@ -119,7 +119,7 @@ var SEARCH_INDEX = [
 
   {
     url: 'https://www.standagain.com.au/stage-2-survive/exit-planning/',
-    title: 'How to Leave a Domestic Violence Relationship Safely',
+    title: 'How Do You Exit An Abusive Relationship?',
     snippet: 'Step-by-step exit planning for men leaving domestic violence — safety planning, emergency bag, digital security, legal protection, financial preparation and emotional support.',
     keywords: 'exit planning leave domestic violence safety plan digital security legal protection separation emergency bag documents cash bank account passwords location services tracking devices surveillance police DVO AVO intervention order children custody children safety'
   },
