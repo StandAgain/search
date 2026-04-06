@@ -246,12 +246,19 @@ var SEARCH_INDEX = [
   /* ================================================
      ARTICLES
      ================================================ */
-
+  
+  {
+  url: 'https://www.standagain.com.au/articles-and-blogs/how-to-tell-your-family-and-friends-07-04-26/',
+  title: 'How to Tell Your Family and Friends You’re a Victim of Domestic Violence as a Man',
+  snippet: 'A practical guide for male victims of domestic violence or coercive control who are ready to open up to friends and family.',
+  keywords: 'silence men help asking domestic violence coercive control stigma shame isolation men dont talk stoic masculinity man up cultural expectations self-reliance capability problem solving venus fly trap corruption belief system architecture structural layers reaching out disclosure why men stay dont report'
+},
+  
   {
   url: 'https://www.standagain.com.au/articles-and-blogs/architecture-of-silence-02-04-26/',
   title: 'The Architecture of Silence — Why Men Don\'t Ask for Help',
   snippet: 'Why male victims of domestic violence and coercive control stay silent — the layered structural reasons that stop men recognising abuse, naming it and reaching out, and what actually changes it.',
-  keywords: 'silence men help asking domestic violence coercive control stigma shame isolation men dont talk stoic masculinity man up cultural expectations self-reliance capability problem solving venus fly trap corruption belief system architecture structural layers reaching out disclosure why men stay dont report'
+  keywords: 'male victim domestic violence, telling family about abuse, coercive control disclosure, how to tell someone about domestic violence, male domestic violence support, men opening up about abuse, domestic violence male victims, telling friends about abuse, coercive control men, abusive relationship help for men, smear campaign domestic violence, flying monkeys abuse, male survivor disclosure, speaking up about domestic violence, men domestic abuse silence, how to talk about abuse, family violence male victims, support network abuse, dismissal domestic violence, disbelief male victims, coercive control isolation, emotional abuse men, telling family coercive control, seven stances of belief, handling pushback disclosure, domestic violence stigma men'
 },
 
  {
