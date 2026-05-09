@@ -38,15 +38,6 @@ var ARTICLES = [
     'male-victims':        { label: 'Male victims',        bg: '#E1F5EE', color: '#085041' }
   };
 
-  function makeTagPill(tagKey) {
-    var cfg = TAG_CONFIG[tagKey];
-    if (!cfg) return null;
-    var span = document.createElement('span');
-    span.textContent = cfg.label;
-    span.style.cssText = 'display:inline-block;font-size:11px;padding:2px 8px;border-radius:12px;margin:2px 4px 2px 0;background:' + cfg.bg + ';color:' + cfg.color + ';font-weight:500;line-height:1.6;';
-    return span;
-  }
-
   function getSlugFromHref(href) {
     var m = href.match(/\/articles-and-blogs\/([^\/]+)/);
     return m ? m[1].replace(/\/$/, '') : null;
@@ -59,73 +50,97 @@ var ARTICLES = [
     return null;
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var allLinks = document.querySelectorAll('a[href*="/articles-and-blogs/"]');
-    var articleLinks = [];
+  function findArticleBlock(headingEl) {
+    var el = headingEl;
+    for (var i = 0; i < 6; i++) {
+      if (!el.parentElement) break;
+      el = el.parentElement;
+      var imgs = el.querySelectorAll('img');
+      var links = el.querySelectorAll('a[href*="/articles-and-blogs/"]');
+      if (imgs.length >= 1 && links.length >= 1) {
+        var siblings = el.parentElement ? el.parentElement.children : [];
+        var otherBlocksInParent = 0;
+        for (var j = 0; j < siblings.length; j++) {
+          if (siblings[j] !== el && siblings[j].querySelector && siblings[j].querySelector('a[href*="/articles-and-blogs/"]')) {
+            otherBlocksInParent++;
+          }
+        }
+        if (otherBlocksInParent > 0 || i >= 2) return el;
+      }
+    }
+    return headingEl.parentElement;
+  }
 
-    allLinks.forEach(function(link) {
+  document.addEventListener('DOMContentLoaded', function() {
+    var headingLinks = document.querySelectorAll('h1 a[href*="/articles-and-blogs/"], h2 a[href*="/articles-and-blogs/"], h3 a[href*="/articles-and-blogs/"], h4 a[href*="/articles-and-blogs/"]');
+    var blocks = [];
+    var seen = {};
+
+    headingLinks.forEach(function(link) {
       var slug = getSlugFromHref(link.href);
-      if (!slug) return;
+      if (!slug || seen[slug]) return;
       var article = findArticleBySlug(slug);
       if (!article) return;
-      if (link.closest('nav') || link.closest('header')) return;
 
-      var wrapper = link.parentElement;
+      var heading = link.closest('h1, h2, h3, h4');
+      if (!heading) return;
+
+      var nav = link.closest('nav, header');
+      if (nav) return;
+
+      var block = findArticleBlock(heading);
+      if (!block) return;
+
+      if (block.getAttribute('data-sa-article')) return;
+
+      seen[slug] = true;
+      block.setAttribute('data-sa-tags', article.tags.join(','));
+      block.setAttribute('data-sa-article', 'true');
+      blocks.push(block);
+
       var tagContainer = document.createElement('div');
-      tagContainer.style.cssText = 'margin:2px 0 8px;line-height:1;';
-      tagContainer.className = 'sa-tags';
-
+      tagContainer.style.cssText = 'margin:4px 0 8px;line-height:1;';
       article.tags.forEach(function(tagKey) {
-        var pill = makeTagPill(tagKey);
-        if (pill) tagContainer.appendChild(pill);
+        var cfg = TAG_CONFIG[tagKey];
+        if (!cfg) return;
+        var span = document.createElement('span');
+        span.textContent = cfg.label;
+        span.style.cssText = 'display:inline-block;font-size:11px;padding:2px 8px;border-radius:12px;margin:2px 4px 2px 0;background:' + cfg.bg + ';color:' + cfg.color + ';font-weight:500;line-height:1.6;';
+        tagContainer.appendChild(span);
       });
-
-      if (wrapper && wrapper !== document.body) {
-        wrapper.appendChild(tagContainer);
-        wrapper.setAttribute('data-sa-tags', article.tags.join(','));
-        wrapper.setAttribute('data-sa-article', 'true');
-      } else {
-        link.insertAdjacentElement('afterend', tagContainer);
-        link.setAttribute('data-sa-tags', article.tags.join(','));
-        link.setAttribute('data-sa-article', 'true');
-      }
-
-      articleLinks.push(wrapper && wrapper !== document.body ? wrapper : link);
+      heading.insertAdjacentElement('afterend', tagContainer);
     });
 
-    if (articleLinks.length === 0) return;
+    if (blocks.length === 0) return;
 
-    var filterBar = document.createElement('div');
-    filterBar.style.cssText = 'margin:0 0 20px;display:flex;flex-wrap:wrap;gap:6px;';
+    var filterTarget = document.getElementById('sa-filters');
+    if (!filterTarget) return;
+
+    filterTarget.style.cssText = 'display:flex;flex-wrap:wrap;gap:0;margin-bottom:16px;';
 
     var allBtn = document.createElement('button');
     allBtn.textContent = 'All';
-    allBtn.style.cssText = 'font-size:12px;padding:4px 14px;border-radius:16px;border:1.5px solid #444;background:#444;color:#fff;cursor:pointer;font-weight:500;';
+    allBtn.style.cssText = 'font-size:13px;padding:5px 16px;border-radius:16px;border:1.5px solid #444;background:#444;color:#fff;cursor:pointer;font-weight:500;margin:0 6px 6px 0;';
     allBtn.setAttribute('data-filter', 'all');
-    filterBar.appendChild(allBtn);
+    filterTarget.appendChild(allBtn);
 
     Object.keys(TAG_CONFIG).forEach(function(key) {
       var cfg = TAG_CONFIG[key];
       var btn = document.createElement('button');
       btn.textContent = cfg.label;
-      btn.style.cssText = 'font-size:12px;padding:4px 14px;border-radius:16px;border:1.5px solid ' + cfg.color + ';background:transparent;color:' + cfg.color + ';cursor:pointer;font-weight:500;';
+      btn.style.cssText = 'font-size:13px;padding:5px 16px;border-radius:16px;border:1.5px solid ' + cfg.color + ';background:transparent;color:' + cfg.color + ';cursor:pointer;font-weight:500;margin:0 6px 6px 0;';
       btn.setAttribute('data-filter', key);
       btn.setAttribute('data-bg', cfg.bg);
       btn.setAttribute('data-color', cfg.color);
-      filterBar.appendChild(btn);
+      filterTarget.appendChild(btn);
     });
 
-    var firstArticle = articleLinks[0];
-    firstArticle.parentElement.insertBefore(filterBar, firstArticle);
-
-    var activeFilter = 'all';
-
-    filterBar.addEventListener('click', function(e) {
+    filterTarget.addEventListener('click', function(e) {
       var btn = e.target.closest('button');
       if (!btn) return;
       var filter = btn.getAttribute('data-filter');
 
-      filterBar.querySelectorAll('button').forEach(function(b) {
+      filterTarget.querySelectorAll('button').forEach(function(b) {
         if (b.getAttribute('data-filter') === 'all') {
           b.style.background = 'transparent';
           b.style.color = '#444';
@@ -143,14 +158,12 @@ var ARTICLES = [
         btn.style.color = btn.getAttribute('data-color');
       }
 
-      activeFilter = filter;
-
-      articleLinks.forEach(function(el) {
-        var tags = el.getAttribute('data-sa-tags') || '';
+      blocks.forEach(function(block) {
+        var tags = block.getAttribute('data-sa-tags') || '';
         if (filter === 'all' || tags.indexOf(filter) !== -1) {
-          el.style.display = '';
+          block.style.display = '';
         } else {
-          el.style.display = 'none';
+          block.style.display = 'none';
         }
       });
     });
