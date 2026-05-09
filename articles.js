@@ -1,4 +1,10 @@
 var ARTICLES = [
+  { slug: 'emotional-range-of-a-spoon-07-05-26',           title: 'How to Have More Than the Emotional Range of a Spoon' },
+  { slug: 'no-one-is-coming-to-save-you-is-crap-02-05-26', title: 'Why \'No One Is Coming to Save You\' Is Bullshit' },
+  { slug: 'how-tti-reveals-coervice-control-01-05-26',     title: 'DARVO Is a Sequence, Not a Label: How TTI Reveals the Mechanics of Coercive Control' },
+  { slug: 'men-need-structure-purpose-and-tools-29-04-26', title: 'Men Need Structure, Purpose and Tools to Heal' },
+  { slug: 'building-your-support-network-23-04-26',        title: 'Building Your Support Team' },
+  { slug: 'the-paper-trail-gap-15-04-26',                  title: 'The Paper Trail Gap' },
   { slug: 'architecture-of-silence-02-04-26',              title: 'The Architecture of Silence' },
   { slug: 'don-t-prove-she-s-a-narcissist-31-03-26',       title: "Don't Prove She's a Narcissist" },
   { slug: 'lawyers-document-coercive-control-28-03-26',    title: 'How Lawyers Can Document Coercive Control' },
