@@ -98,6 +98,12 @@ var SEARCH_INDEX = [
     keywords: 'TTI framework tactic trigger impact coercive control how it works psychology abuse four stages educate survive recover thrive EGO framework formation model pattern abuse cycle learned helplessness'
   },
 
+  {
+    url: 'https://www.standagain.com.au/stage-1-educate/self-assessment/',
+    title: 'Coercive Control Self-Assessment Tool for Men (CCSAT-M)',
+    snippet: 'A free, private self-assessment tool to help men recognise patterns of coercive control in their relationship. No data is stored, saved, or transmitted. Everything runs in your browser.',
+    keywords: 'self assessment coercive control CCSAT-M quiz test am I being abused controlling relationship male victim recognise patterns free private confidential no data stored browser based tool checklist domestic violence signs men am I in an abusive relationship is my relationship abusive'
+  },
 
   /* ================================================
      STAGE 2: SURVIVE
@@ -246,7 +252,49 @@ var SEARCH_INDEX = [
   /* ================================================
      ARTICLES
      ================================================ */
+
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/emotional-range-of-a-spoon-07-05-26/',
+    title: 'How to Have More Than the Emotional Range of a Spoon',
+    snippet: 'Men are handed a fraction of the emotional spectrum and told it is enough. Abuse compresses it further. This article maps the 27 human emotions and gives men a practical framework for processing what they feel.',
+    keywords: 'emotional range spoon emotions men feelings emotional spectrum 27 emotions processing feelings masculine conditioning cultural restriction emotional vocabulary numbness flat suppression feeling vs acting coercive control abuse compressed range emotional data logic emotion informed choice display process act internal world recovery emotional literacy alexithymia men and feelings'
+},
   
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/no-one-is-coming-to-save-you-is-crap-02-05-26/',
+    title: 'Why \'No One Is Coming to Save You\' Is Bullshit',
+    snippet: 'The phrase tells men to isolate. It tells them needing support is weakness. For men recovering from coercive control it confirms the exact message the abuse installed. It is time to replace it.',
+    keywords: 'no one is coming to save you bullshit crap isolation self reliance masculinity toxic motivation coercive control abuse recovery male victim support weakness strength asking for help motivational content manosphere self improvement hard truths inner work yours support network connection vulnerability men recovery healing'
+},
+
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/how-tti-reveals-coervice-control-01-05-26/',
+    title: 'DARVO Is a Sequence, Not a Label: How the TTI Framework Reveals the Mechanics of Coercive Control',
+    snippet: 'DARVO is a sequence where each phase depends on the one before it. The TTI framework reveals why reordering any step causes the mechanism of coercive control to collapse — and why naming tactics alone is never enough.',
+    keywords: 'TTI framework DARVO sequence coercive control tactic trigger impact chain reaction mechanics abuse gaslighting isolation financial control stacked tactics dependency vulnerability trigger activation measurable harm naming tactics clinical framework deny attack reverse victim offender deployment sequence abuse mechanics male victims'
+},
+
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/men-need-structure-purpose-and-tools-29-04-26/',
+    title: 'Men Need Structure, Purpose and Tools to Heal',
+    snippet: 'Why unstructured therapy loses men and what works instead — structured frameworks, clear goals, practical tools, and purpose-driven recovery that gives men something to work with.',
+    keywords: 'men structure purpose tools heal therapy mental health recovery coercive control unstructured therapy doesnt work male disengagement framework goals practical tools purpose driven recovery blank stare feeling words therapist emotional vocabulary architecture of silence people pleasing patterns inner work goal oriented structured support male mental health services'
+}, 
+  
+    {
+    url: 'https://www.standagain.com.au/articles-and-blogs/building-your-support-network-23-04-26/',
+    title: 'Building Your Support Team — The Nine Players Every Man Needs Through Recovery',
+    snippet: 'The nine functional roles every man needs in his support network through recovery from coercive control — who to involve at each stage, what kind of support helps when, and why timing matters as much as the people themselves.',
+    keywords: 'support network team recovery coercive control nine players isolation connection rebuild friends family therapist coach lawyer colleague mentor four stages educate survive recover thrive timing function roles support system male victim reaching out social muscle atrophy trust vulnerability asking for help'
+},
+    
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/the-paper-trail-gap-15-04-26/',
+    title: 'The Paper Trail Gap — Why What You Lived Doesn\'t Show Up in Evidence',
+    snippet: 'A practical guide for male victims of coercive control on closing the gap between what you experienced and what you can prove — court vs therapy documentation, the incident tracker, and building a paper trail that serves you legally and emotionally.',
+    keywords: 'paper trail gap evidence documentation coercive control male victim proof court therapy incident tracker lawyer family court affidavit fog survival mode no evidence no record didnt know abuse betrayal loyalty gathering evidence felt wrong court documents legal evidence emotional evidence incident log what happened vs what you can prove building a case'
+},
+   
   {
   url: 'https://www.standagain.com.au/articles-and-blogs/how-to-tell-your-family-and-friends-07-04-26/',
   title: 'How to Tell Your Family and Friends You’re a Victim of Domestic Violence as a Man',
