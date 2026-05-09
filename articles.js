@@ -50,79 +50,95 @@ var ARTICLES = [
     return null;
   }
 
-  function findArticleBlock(headingEl) {
-    var el = headingEl;
-    for (var i = 0; i < 6; i++) {
-      if (!el.parentElement) break;
-      el = el.parentElement;
-      var imgs = el.querySelectorAll('img');
-      var links = el.querySelectorAll('a[href*="/articles-and-blogs/"]');
-      if (imgs.length >= 1 && links.length >= 1) {
-        var siblings = el.parentElement ? el.parentElement.children : [];
-        var otherBlocksInParent = 0;
-        for (var j = 0; j < siblings.length; j++) {
-          if (siblings[j] !== el && siblings[j].querySelector && siblings[j].querySelector('a[href*="/articles-and-blogs/"]')) {
-            otherBlocksInParent++;
+  document.addEventListener('DOMContentLoaded', function() {
+    var allHeadingLinks = document.querySelectorAll('h3 a[href*="/articles-and-blogs/"]');
+    var headingLinks = [];
+    allHeadingLinks.forEach(function(link) {
+      if (!link.closest('nav') && !link.closest('header')) headingLinks.push(link);
+    });
+    if (headingLinks.length === 0) return;
+
+    var headings = [];
+    headingLinks.forEach(function(link) {
+      var h = link.closest('h3');
+      if (h) headings.push(h);
+    });
+
+    var blockLevel = null;
+    if (headings.length >= 2) {
+      var h1 = headings[0];
+      var h2 = headings[1];
+      var p1 = h1.parentElement;
+      var p2 = h2.parentElement;
+      while (p1 && p2) {
+        if (p1.parentElement === p2.parentElement) {
+          blockLevel = { blocks: [], parent: p1.parentElement };
+          var children = p1.parentElement.children;
+          for (var i = 0; i < children.length; i++) {
+            var child = children[i];
+            if (child.querySelector('h3 a[href*="/articles-and-blogs/"]')) {
+              blockLevel.blocks.push(child);
+            }
           }
+          break;
         }
-        if (otherBlocksInParent > 0 || i >= 2) return el;
+        if (p1.parentElement && p2.parentElement) {
+          p1 = p1.parentElement;
+          p2 = p2.parentElement;
+        } else {
+          break;
+        }
       }
     }
-    return headingEl.parentElement;
-  }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var headingLinks = document.querySelectorAll('h1 a[href*="/articles-and-blogs/"], h2 a[href*="/articles-and-blogs/"], h3 a[href*="/articles-and-blogs/"], h4 a[href*="/articles-and-blogs/"]');
+    if (!blockLevel || blockLevel.blocks.length === 0) return;
+
     var blocks = [];
     var seen = {};
-
-    headingLinks.forEach(function(link) {
+    blockLevel.blocks.forEach(function(block) {
+      var link = block.querySelector('h3 a[href*="/articles-and-blogs/"]');
+      if (!link) return;
       var slug = getSlugFromHref(link.href);
       if (!slug || seen[slug]) return;
       var article = findArticleBySlug(slug);
       if (!article) return;
-
-      var heading = link.closest('h1, h2, h3, h4');
-      if (!heading) return;
-
-      var nav = link.closest('nav, header');
-      if (nav) return;
-
-      var block = findArticleBlock(heading);
-      if (!block) return;
-
-      if (block.getAttribute('data-sa-article')) return;
-
       seen[slug] = true;
       block.setAttribute('data-sa-tags', article.tags.join(','));
-      block.setAttribute('data-sa-article', 'true');
       blocks.push(block);
 
-      var tagContainer = document.createElement('div');
-      tagContainer.style.cssText = 'margin:4px 0 8px;line-height:1;';
-      article.tags.forEach(function(tagKey) {
-        var cfg = TAG_CONFIG[tagKey];
-        if (!cfg) return;
-        var span = document.createElement('span');
-        span.textContent = cfg.label;
-        span.style.cssText = 'display:inline-block;font-size:11px;padding:2px 8px;border-radius:12px;margin:2px 4px 2px 0;background:' + cfg.bg + ';color:' + cfg.color + ';font-weight:500;line-height:1.6;';
-        tagContainer.appendChild(span);
-      });
-      heading.insertAdjacentElement('afterend', tagContainer);
+      var heading = block.querySelector('h3');
+      if (heading) {
+        var tagContainer = document.createElement('div');
+        tagContainer.style.cssText = 'margin:4px 0 8px;line-height:1;';
+        article.tags.forEach(function(tagKey) {
+          var cfg = TAG_CONFIG[tagKey];
+          if (!cfg) return;
+          var span = document.createElement('span');
+          span.textContent = cfg.label;
+          span.style.cssText = 'display:inline-block;font-size:11px;padding:2px 8px;border-radius:12px;margin:2px 4px 2px 0;background:' + cfg.bg + ';color:' + cfg.color + ';font-weight:500;line-height:1.6;';
+          tagContainer.appendChild(span);
+        });
+        heading.insertAdjacentElement('afterend', tagContainer);
+      }
     });
 
     if (blocks.length === 0) return;
 
-    var filterTarget = document.getElementById('sa-filters');
-    if (!filterTarget) return;
+    var filterBar = document.createElement('div');
+    filterBar.style.cssText = 'display:flex;flex-wrap:wrap;margin:0 0 24px;padding:16px 0;';
 
-    filterTarget.style.cssText = 'display:flex;flex-wrap:wrap;gap:0;margin-bottom:16px;';
+    var filterTarget = document.getElementById('sa-filters');
+    if (filterTarget) {
+      filterTarget.appendChild(filterBar);
+    } else {
+      blockLevel.parent.insertBefore(filterBar, blockLevel.blocks[0]);
+    }
 
     var allBtn = document.createElement('button');
     allBtn.textContent = 'All';
     allBtn.style.cssText = 'font-size:13px;padding:5px 16px;border-radius:16px;border:1.5px solid #444;background:#444;color:#fff;cursor:pointer;font-weight:500;margin:0 6px 6px 0;';
     allBtn.setAttribute('data-filter', 'all');
-    filterTarget.appendChild(allBtn);
+    filterBar.appendChild(allBtn);
 
     Object.keys(TAG_CONFIG).forEach(function(key) {
       var cfg = TAG_CONFIG[key];
@@ -132,15 +148,15 @@ var ARTICLES = [
       btn.setAttribute('data-filter', key);
       btn.setAttribute('data-bg', cfg.bg);
       btn.setAttribute('data-color', cfg.color);
-      filterTarget.appendChild(btn);
+      filterBar.appendChild(btn);
     });
 
-    filterTarget.addEventListener('click', function(e) {
+    filterBar.addEventListener('click', function(e) {
       var btn = e.target.closest('button');
       if (!btn) return;
       var filter = btn.getAttribute('data-filter');
 
-      filterTarget.querySelectorAll('button').forEach(function(b) {
+      filterBar.querySelectorAll('button').forEach(function(b) {
         if (b.getAttribute('data-filter') === 'all') {
           b.style.background = 'transparent';
           b.style.color = '#444';
