@@ -252,7 +252,20 @@ var SEARCH_INDEX = [
   /* ================================================
      ARTICLES
      ================================================ */
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/guide-to-mediation-for-male-victims-28-05-26/ ',
+    title: 'A Guide to Mediation for Male Victims of Family Violence',
+    snippet: 'Mediation with your abuser is different. This guide covers what to expect, how to prepare, how to manage bias in the room, traps to look out for, and what to hold fast on when your conditioning is telling you to give in',
+    keywords: 'mediation, FDR, family dispute resolution, male victims, coercive control, family violence, shuttle mediation, parenting orders, family court, Australia, preparation, bias, pressure, negotiate'
+},
 
+    {
+    url: 'https://www.standagain.com.au/articles-and-blogs/grey-rock-is-not-a-survival-tool-22-05-26/',
+    title: 'Grey Rock Is Not a Survival Tool - It's the Result of Using Them',
+    snippet: 'Grey rock is the most widely recommended technique for surviving abuse. It is also incomplete. This article explains what grey rock actually is, why it breaks without the right tools underneath it, and the survival toolkit that makes it work.',
+    keywords: 'grey rock method, grey rock technique abuse, grey rock survival tools, grey rock coercive control, grey rock domestic violence, grey rock escalation, extinction burst grey rock, JADE technique abuse, BIFF communication, respond dont react, tactical silence abuse, grey rock co-parenting, grey rock dissociation, grey rock limitations, survival tools abuse, emotional regulation abuse, grey rock men, grey rock male victims'
+},
+  
   {
     url: 'https://www.standagain.com.au/articles-and-blogs/emotional-range-of-a-spoon-07-05-26/',
     title: 'How to Have More Than the Emotional Range of a Spoon',
