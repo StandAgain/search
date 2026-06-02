@@ -252,8 +252,16 @@ var SEARCH_INDEX = [
   /* ================================================
      ARTICLES
      ================================================ */
+
+    {
+    url: 'https://www.standagain.com.au/articles-and-blogs/clearing-your-name-02-06-26/',
+    title: 'Clearing Your Name After a False Allegation',
+    snippet: 'Clearing your name after a false allegation is difficult. This article explored the difficult task on what you can do, who to speak to and what you could say',
+    keywords: 'false allegation, divorce, male victims, coercive control, family violence, avo, family court, Australia, bias, pressure, negotiate'
+},
+  
   {
-    url: 'https://www.standagain.com.au/articles-and-blogs/guide-to-mediation-for-male-victims-28-05-26/ ',
+    url: 'https://www.standagain.com.au/articles-and-blogs/guide-to-mediation-for-male-victims-28-05-26/',
     title: 'A Guide to Mediation for Male Victims of Family Violence',
     snippet: 'Mediation with your abuser is different. This guide covers what to expect, how to prepare, how to manage bias in the room, traps to look out for, and what to hold fast on when your conditioning is telling you to give in',
     keywords: 'mediation, FDR, family dispute resolution, male victims, coercive control, family violence, shuttle mediation, parenting orders, family court, Australia, preparation, bias, pressure, negotiate'
