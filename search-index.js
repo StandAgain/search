@@ -253,7 +253,42 @@ var SEARCH_INDEX = [
      ARTICLES
      ================================================ */
 
-    {
+{
+    url: 'https://www.standagain.com.au/articles-and-blogs/dating-green-flags-17-06-26/',
+    title: 'Green Flags to Look For in a New Relationship After Abuse',
+    snippet: 'After an abusive relationship, knowing what good looks like matters as much as spotting red flags. Green flags to look for on the apps, on early dates, and as someone enters your life.',
+    keywords: 'green flags new relationship dating after abuse coercive control healthy partner signs what to look for in a new partner dating again after divorce am I ready to date readiness gut check on the apps first date signs receptiveness consistency how a healthy relationship feels feeling safe trusting your judgement after abuse the tuesday test healthy love male victims'
+  },
+
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/raising-clear-eyed-children-14-06-26/',
+    title: 'How to Protect Your Children Without Turning Them Against Their Mother',
+    snippet: 'Six principles for fathers in shared custody — raise children who can think, read people, and stand on their own, without badmouthing their mother or alienating them.',
+    keywords: 'co-parenting without alienating your child how to not badmouth your ex to your kids protecting children without parental alienation raising children who can think for themselves shared custody difficult ex teaching kids to spot manipulation bad behaviour is not a bad person unconditional love parenting raising resilient kids after abuse breaking intergenerational trauma do not turn kids against their mother holding your ground co-parenting different rules between houses teaching kids to read people raising clear-eyed children parenting after coercive control modelling healthy conflict discipline the behaviour not the child'
+  },
+
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/formal-second-action-plan-submission-11-06-26/',
+    title: 'Stand Again\'s Formal Submission to the Second Action Plan Consultation',
+    snippet: 'Stand Again conducted a gap analysis of 336 DFV service providers across 19 service lines and every state and territory, mapping where provision is strong and where gaps remain for all victim-survivors. The submission makes 12 recommendations.',
+    keywords: 'second action plan submission consultation national plan to end violence against women and children DFV service landscape gap analysis 336 providers 19 service lines male victim-survivors female victim-survivors pets crisis accommodation suicide prevention 1.74 million underserved $7 billion downstream cost 12 recommendations policy government family violence domestic violence Australia DSS systemic gaps service provision'
+  },
+
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/alienated-from-your-children-10-05-26/',
+    title: 'What to Do If You\'ve Been Alienated From Your Children: A Father\'s Guide',
+    snippet: 'Practical guidance for alienated fathers — what to do when you are apart, when you are together, in the legal process, and when your child repeats things that are not true.',
+    keywords: 'what to do if you have been alienated from your children parental alienation advice for fathers alienated dad how to deal with parental alienation my child won\'t see me child refuses contact child tells me to stop contacting them child repeats lies about me child accuses me of something that never happened staying in contact with an alienated child how to prove parental alienation alienation evidence timeline ex turned my kids against me memory account for alienated children gatekeeping ex relocation interstate move father\'s day alienated child deteriorating coercive control through children Australia'
+  },
+
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/language-of-abused-men-07-06-26/',
+    title: 'The Language Men Use Instead of "Victim" and "Abuse"',
+    snippet: 'Men in abusive relationships rarely use the word victim. The coded phrases they use instead, how to recognise them in a friend, and what to say.',
+    keywords: 'language men use instead of victim men don\'t say abuse how to tell if a man is being abused signs a man is being abused by his wife signs a man is being controlled helping a male friend in an abusive relationship what to say to a man being abused under the thumb she\'s got him whipped walking on eggshells he won\'t admit he\'s being abused man doesn\'t see he\'s a victim recognising coercive control in men what men say instead of abuse leaving the light on talking to an abused man coded language coercive control four domains behaviour information thought emotional control'
+  },
+  
+  {
     url: 'https://www.standagain.com.au/articles-and-blogs/clearing-your-name-02-06-26/',
     title: 'Clearing Your Name After a False Allegation',
     snippet: 'Clearing your name after a false allegation is difficult. This article explored the difficult task on what you can do, who to speak to and what you could say',
@@ -269,7 +304,7 @@ var SEARCH_INDEX = [
 
     {
     url: 'https://www.standagain.com.au/articles-and-blogs/grey-rock-is-not-a-survival-tool-22-05-26/',
-    title: 'Grey Rock Is Not a Survival Tool - It's the Result of Using Them',
+title: 'Grey Rock Is Not a Survival Tool - It\'s the Result of Using Them',
     snippet: 'Grey rock is the most widely recommended technique for surviving abuse. It is also incomplete. This article explains what grey rock actually is, why it breaks without the right tools underneath it, and the survival toolkit that makes it work.',
     keywords: 'grey rock method, grey rock technique abuse, grey rock survival tools, grey rock coercive control, grey rock domestic violence, grey rock escalation, extinction burst grey rock, JADE technique abuse, BIFF communication, respond dont react, tactical silence abuse, grey rock co-parenting, grey rock dissociation, grey rock limitations, survival tools abuse, emotional regulation abuse, grey rock men, grey rock male victims'
 },
