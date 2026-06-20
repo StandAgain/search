@@ -253,7 +253,21 @@ var SEARCH_INDEX = [
      ARTICLES
      ================================================ */
 
-{
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/a-child-s-own-world-in-two-homes-24-06-26/',
+    title: 'Helping Your Child Build Their Own World Across Two Homes',
+    snippet: 'A child split across two homes can become two half-children, one for each house. This article explores the A, B, C that keeps them whole: autonomy, belonging, and crossing.',
+    keywords: 'helping children adjust to two homes children living in two homes after divorce helping kids between two households child identity after separation co-parenting transitions child feels like a guest our house not daddy\'s place letting kids take their things between homes child autonomy belonging crossing raising a whole child two homes child loyalty bind sharing about the other house being excited about mum\'s handover stress routine predictability supporting your child after separation male victims fathers'
+  },
+  
+  {
+    url: 'https://www.standagain.com.au/articles-and-blogs/how-to-take-back-f-o-g-20-06-26/',
+    title: 'Don\'t Break Free From FOG. Take It Back.',
+    snippet: 'Fear, obligation and guilt are not flaws in your character. They came from duty and a conscience that makes you a decent man. This article explores how abusers and culture corrupt FOG, and how to take it back.',
+    keywords: 'FOG fear obligation guilt Susan Forward emotional blackmail coercive control male victims how to overcome FOG take back FOG corrupted FOG discernment discipline over motivation healthy obligation guilt manufactured guilt provider identity good man stays conscience weaponised cultural masculinity toxic masculinity DARVO blame shifting reclaim fear obligation guilt internal control mechanism'
+  },
+
+  {
     url: 'https://www.standagain.com.au/articles-and-blogs/dating-green-flags-17-06-26/',
     title: 'Green Flags to Look For in a New Relationship After Abuse',
     snippet: 'After an abusive relationship, knowing what good looks like matters as much as spotting red flags. Green flags to look for on the apps, on early dates, and as someone enters your life.',
