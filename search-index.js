@@ -453,7 +453,7 @@ var SEARCH_INDEX = [
   },
 
   {
-    url: 'https://www.standagain.com.au/about/our-approach/',
+    url: 'https://www.standagain.com.au/about/approach/',
     title: 'Our Approach — How Stand Again Supports Male Victims',
     snippet: 'Stand Again\'s approach to supporting male victims of coercive control and family violence — evidence-based, trauma-informed, non-partisan, and grounded in lived experience.',
     keywords: 'our approach stand again evidence based trauma informed non-partisan lived experience male victims coercive control family violence four stages educate survive recover thrive TTI framework CCSAT-M methodology'
