@@ -163,6 +163,13 @@ var SEARCH_INDEX = [
   },
 
   {
+    url: 'https://www.standagain.com.au/articles-and-blogs/taking-accountability-01-07-26/',
+    title: 'Taking Accountability for Your Part After an Abusive Relationship',
+    snippet: 'Taking accountability for your own behaviour after abuse is not self-blame. It is how you grow, rebuild self-trust, and become someone you can rely on.',
+    keywords: 'taking accountability after an abusive relationship accountability not self-blame, owning your part after abuse, self-reflection after abusive relationship, rebuilding self-trust after abuse, healing after abuse as a man, taking responsibility without blame, growth after coercive control'
+  },
+  
+  {
     url: 'https://www.standagain.com.au/articles-and-blogs/a-child-s-own-world-in-two-homes-24-06-26/',
     title: 'Helping Your Child Build Their Own World Across Two Homes',
     snippet: 'A child split across two homes can become two half-children. This article explores the A, B, C that keeps them whole: autonomy, belonging, and crossing.',
