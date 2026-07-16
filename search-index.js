@@ -162,6 +162,13 @@ var SEARCH_INDEX = [
     keywords: 'articles blogs coercive control family violence emotional abuse recovery separation family court male victims Australia in depth practical education controlling relationship toxic relationship abusive relationship'
   },
 
+{
+    url: 'https://www.standagain.com.au/articles-and-blogs/voice-in-the-vacuum-08-07-26/',
+    title: 'The Voice in the Vacuum — Stand Again\'s Position on the Manosphere',
+    snippet: 'The manosphere fills a vacuum that evidence-based services have left. Why Stand Again is not part of it, what distinguishes legitimate men\'s advocacy from adversarial ideology, and where the line sits.',
+    keywords: 'manosphere voice in the vacuum Andrew Tate red pill mens rights movement MRA MGTOW incel adversarial frame misogyny anti-feminism mens advocacy legitimate mens rights coercive control male victims evidence based non partisan stand again position opinion piece men support services toxic masculinity mens mental health'
+  },
+  
   {
     url: 'https://www.standagain.com.au/articles-and-blogs/taking-accountability-01-07-26/',
     title: 'Taking Accountability for Your Part After an Abusive Relationship',
